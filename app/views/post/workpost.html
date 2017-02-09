@@ -1,0 +1,18 @@
+<h2 class="art-txt list-tit">
+  <span>作品</span>
+</h2>
+<ul id="main" class="fl">
+  {{each posts.works as post i}}
+  <li>
+    <a class="box" href="/posts/{{post.category}}/{{post._id.toString()}}" target="_self">
+      <img src="/uploads/{{post.img_url}}" alt="{{post.title}}"/>
+      <h3>{{post.title}}</h3>
+      <span class="intro">简介：{{post.postSummary}}</span>
+      <div class="like-box">
+        <!--<span class="fr"><em class="iconfont">&#xe607; </em><em class="like">余健</em></span>-->
+        <span class="fr"><em class="iconfont">&#xe609; </em><em class="like">{{post.created_at}}</em></span>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>

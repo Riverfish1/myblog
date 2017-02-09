@@ -1,0 +1,30 @@
+{{include 'header'}}
+<!-- 内容开始 -->
+<section>
+  <!-- 文章 -->
+  <article>
+    <div class="art-left">
+      {{include '/post/allpost'}}
+    </div>
+    <aside  class="right-box">
+      {{include '/post/searchpost'}}
+      <div class="art mt20">
+        {{include '/post/newestpost'}}
+      </div>
+      <div class="art mt20">
+        {{include '/post/recommend'}}
+      </div>
+      <div class="art mt20">
+        {{include '/post/searchpost'}}
+        <div class="art mt20">
+          {{include '/post/hottag'}}
+        </div>
+      </div>
+      <div class="art mt20">
+        {{include '/post/careus'}}
+      </div>
+    </aside>
+  </article>
+</section>
+<!-- end -->
+{{include 'footer'}}

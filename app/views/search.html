@@ -1,0 +1,24 @@
+{{include 'header'}}
+<!-- 内容开始 -->
+<section>
+  <!-- 文章 -->
+  <article>
+    <div class="art-left">
+      <h2 class="art-txt list-tit">
+        <span>搜索结果</span>
+      </h2>
+      {{include '/post/detail_post'}}
+      <ul class="page">
+        <li><span class='pageinfo'>共<strong>1</strong>页/<strong>1</strong>条记录</span></li>
+      </ul>
+    </div>
+    <aside class="right-box">
+      {{include '/post/searchpost'}}
+      <div class="art mt20">
+        {{include '/post/careus'}}
+      </div>
+    </aside>
+  </article>
+</section>
+<!-- end -->
+{{include 'footer'}}

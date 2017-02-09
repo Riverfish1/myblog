@@ -1,0 +1,28 @@
+<h2 class="art-txt">
+  <em class="iconfont c-f26868">&#xe606;</em>
+  <span>最新文章</span>
+</h2>
+{{each posts.newests as post i}}
+<div class="art-model">
+  <h3><a href="/posts/{{post.category}}/{{post._id.toString()}}" target="_self">{{post.title}}</a></h3>
+  <p class="dateview">
+    <span>发布时间：{{post.created_at}}</span>
+    <span>作者：{{post.author}}</span>
+    <span>分类：{{post.sub_category}}</span>
+  </p>
+  <dl class="img-txt">
+    <dt>
+      <!--<a href="/tm/xwzj/web_222.html"><img src="/images/defaultpic.gif" alt="gulp+browserify编译es6方法及常见错误解决"></a>-->
+    </dt>
+    <dd>
+      <p class="deatil">{{post.postSummary}}</p>
+      <a href="/posts/index/remove/{{post._id.toString()}}" class="btn bg-f26868 c-fff"
+         target="_self">删除</a>
+      <a href="/posts/{{post.category}}/edit/{{post._id.toString()}}" class="btn bg-f26868 c-fff"
+         target="_self">编辑</a>
+      <a href="/posts/{{post.category}}/{{post._id.toString()}}" class="btn bg-f26868 c-fff"
+         target="_self">查看全文</a>
+    </dd>
+  </dl>
+</div>
+{{/each}}

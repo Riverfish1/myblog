@@ -1,0 +1,121 @@
+{{ include 'header'}}
+<!-- 内容开始 -->
+<section>
+  <!-- 文章 -->
+  <article>
+    <div class="art-left detail-txt">
+      <div class="curr-pos">
+        当前位置： <a href='/posts'>主页</a> > <a href='/posts/{{posts.post.category}}/'>{{posts.post.category}}</a> > <a href='/posts/{{posts.post.category}}/subcategory/{{posts.post.sub_category}}'>{{posts.post.sub_category}}</a> >  文章
+      </div>
+      <h1>{{posts.post.title}}</h1>
+      <div class="txt-infr">
+        <!--<em class="iconfont"></em>-->
+        <em class="font">发布时间：</em>
+        <span>{{posts.post.created_at}}</span>
+        <!--<em class="iconfont"></em>-->
+        <em class="font">作者：</em>
+        <span>{{posts.post.author}}</span>
+        <em class="font">浏览次数：</em>
+        <!--<em class="iconfont"></em>-->
+        <span class="count">
+          {{posts.post.pv}}
+        </span>
+      </div>
+      <div class="graf-box">
+        {{#posts.post.content}}
+      </div>
+      <div class="zanzhu-box">
+        <span class="zan-btn">赞助</span>
+        <div class="img-box"><img width="400" src="/uploads/allimg/1-160Q6221J60-L.jpg" alt="迹忆博客"></div>
+        <style>
+          .zanzhu-box{position: relative;margin-bottom:20px;}
+          .zanzhu-box .zan-btn{width:100px;height:35px;line-height:35px;background:#f26868;color:#fff;font-size:18px;display:block;text-align:center;}
+          .zanzhu-box .img-box{display:none;position: absolute;left:150px;top:0;z-index:9999;}
+        </style>
+        <script>
+          $(".zanzhu-box .zan-btn").hover(function() {
+            $(".zanzhu-box .img-box").show();
+          }, function() {
+            $(".zanzhu-box .img-box").hide();
+          });
+        </script>
+      </div>
+      <div class="pre-next">
+        {{if posts.prevAndNextPost.prevPost}}
+        <p>上一篇：<a href='/posts/{{posts.post.category}}/{{posts.prevAndNextPost.prevPost._id.toString()}}'>{{posts.prevAndNextPost.prevPost.title}}</a> </p>
+        {{/if}}
+        {{if posts.prevAndNextPost.nextPost}}
+        <p>下一篇：<a href='/posts/{{posts.post.category}}/{{posts.prevAndNextPost.nextPost._id.toString()}}'>{{posts.prevAndNextPost.nextPost.title}}</a> </p>
+        {{/if}}
+      </div>
+      <div class="blank15"></div>
+      <div class="pre-next">
+        <p>除非注明转载，本站文章均为原创，欢迎转载，转载请以链接形式注明出处</p>
+        <p class="arcurl">本文地址：<a href="/posts/{{posts.post.category}}/{{posts.post._id.toString()}}">http://172.28.102.143:3000/posts/{{posts.post.category}}/{{posts.post._id.toString()}}</a></p>
+      </div>
+      <!--<div class="blank15"></div>
+      <div class="actbox">
+        <ul>
+          <li id="act-fav"><a href="/plus/stow.php?aid=219" target="_self">收藏</a></li>
+          <li id="act-err"><a href="/plus/erraddsave.php?aid=219&title=移动端基本环境" target="_self">挑错</a></li>
+          <li id="act-pus"><a href="/plus/recommend.php?aid=219" target="_self">推荐</a></li>
+        </ul>
+      </div>-->
+      <div class="blank15"></div>
+      <div class="dashed-border"></div>
+      <script>document.write(unescape('%3Cdiv id="hm_t_90415"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://crs.baidu.com/t.js?siteId=4a24e9fb4d76cb5d3b7124de90c58d46&planId=90415&async=0&referer=') + encodeURIComponent(document.referrer) + '&title=' + encodeURIComponent(document.title) + '&rnd=' + (+new Date) + unescape('"%3E%3C/script%3E'));</script>
+      <div class="dashed-border"></div>
+      <!--&lt;!&ndash; Duoshuo Comment BEGIN &ndash;&gt;-->
+      <!--<div class="ds-thread"  data-thread-key="{{posts.post._id.toString()}}" data-author-key="2"  data-url="http://www.ywomc.com/posts/{{posts.post.category}}/{{posts.post._id.toString()}}"  data-image="http://www.ywomc.com/uploads/161118/1-16111QGG3b5.jpg" data-title="移动端基本环境"></div>-->
+      <!--<script type="text/javascript">-->
+        <!--var duoshuoQuery = {short_name: "ywomc"};-->
+        <!--(function() {-->
+          <!--var ds = document.createElement('script');-->
+          <!--ds.type = 'text/javascript';ds.async = true;-->
+          <!--ds.src = 'http://static.duoshuo.com/embed.js';-->
+          <!--ds.charset = 'UTF-8';-->
+          <!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);-->
+        <!--})();-->
+      <!--</script>-->
+      <!--&lt;!&ndash; Duoshuo Comment END &ndash;&gt;<div id="ds-ssr" class="mt1">-->
+      <dl class="tbox">
+        <dt> <strong>评论列表（网友评论仅供网友表达个人看法，并不表明本站同意其观点或证实其描述）</strong> </dt>
+        <dd>
+          <div class="dede_comment">
+            <div class="decmt-box1">
+              <ul>
+                <li id="commetcontentNew"></li>
+              </ul>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    </div>
+
+  </article>
+  <aside  class="right-box">
+    {{include '/post/searchpost'}}
+    <div class="art mt20">
+      {{include '/post/sub_category'}}
+    </div>
+    <div class="art mt20">
+      {{include '/post/newestpost'}}
+    </div>
+    <div class="art mt20">
+      {{include '/post/hotpost'}}
+    </div>
+    <div class="art mt20">
+      {{include '/post/hottag'}}
+      <div class="share mt20">
+        {{include '/post/share'}}
+      </div>
+    </div>
+    <div class="art mt20">
+      {{include '/post/careus'}}
+    </div>
+  </aside>
+  </article>
+</section>
+<!-- end -->
+{{ include 'footer'}}

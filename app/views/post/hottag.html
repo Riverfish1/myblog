@@ -1,0 +1,9 @@
+<h2 class="art-txt">
+  <em class="iconfont c-f26868">&#xe600;</em>
+  <span>热门标签</span>
+</h2>
+<div class="of-h">
+  {{each posts.tags as tag i}}
+  <a class="btn label" href="/tags/{{tag.name}}/" target="_self">{{tag.name}}</a>
+  {{/each}}
+</div>

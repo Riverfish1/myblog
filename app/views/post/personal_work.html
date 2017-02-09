@@ -1,0 +1,15 @@
+<h2><a href="/posts/works" target="_self">个人作品</a></h2>
+<ul class="work-con">
+  {{each posts.works as post i}}
+  <li>
+    <a href="/posts/{{post.category}}/{{post._id.toString()}}" target="_self">
+      <img src="/uploads/{{post.img_url}}" alt="{{post.title}}">
+      <div class="work_bak"></div>
+      <div class="work_info">
+        <h3>{{post.title}}</h3>
+        <p>{{post.postSummary}}</p>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>

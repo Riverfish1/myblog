@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>余健博客 | 登陆</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login_bg">
+<div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+        {{ if success}}
+        <div class="ui success message">
+            <p>{{success }}</p>
+        </div>
+        {{/if}}
+
+        {{if error }}
+        <div class="ui error message">
+            <p>{{ error }}</p>
+        </div>
+        {{/if}}
+    </div>
+</div>
+<div class="login signup">
+    <form method="post" action="/signup">
+        <div class="name">
+            <span class="icon_user icon" aria-hidden="true"></span>
+            <input name="name" type="text"  id="name" placeholder="请输入用户名进行注册">
+        </div>
+        <div class="password">
+            <span class="icon_lock icon" aria-hidden="true"></span>
+            <input name="password" type="password"  placeholder="请输入登陆密码">
+        </div>
+        <div class="password">
+            <span class="icon_lock icon" aria-hidden="true"></span>
+            <input name="repassword" type="password"  placeholder="请确认登陆密码">
+        </div>
+        <div class="email">
+            <span class="icon_email icon" aria-hidden="true"></span>
+            <input name="email" type="email"  placeholder="请输入邮箱">
+        </div>
+        <div class="field required">
+            <label>性别:</label>
+            <select class="ui compact selection dropdown" name="gender">
+                <option value="m">男</option>
+                <option value="f">女</option>
+                <option value="x">保密</option>
+            </select>
+        </div>
+        <div class="field required">
+            <label>头像:</label>
+            <input type="file" name="avatar">
+        </div>
+        <div class="field required">
+            <label>个人简介:</label>
+            <textarea name="bio" rows="5" v-model="user.bio"></textarea>
+        </div>
+        <div class="submit">
+            <input type="submit" value="注册"/>
+        </div>
+        <div class="operator">
+            <a href="/signin" target="_self" class="register"> 已注册，立即登陆</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

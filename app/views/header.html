@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  {{if posts && posts.post }}
+  <meta name="keywords" content="{{posts.post.category}},{{posts.post.sub_category}},{{posts.post.tag}}" />
+  <meta name="description" content="{{posts.post.postSummary}}" />
+  <title>{{posts.post.title}}</title>
+  {{else}}
+  <meta name="keywords" content="余健,个人博客,余健博客,个人博客模板,自媒体" />
+  <meta name="description" content="余健博客，一个个人博客，专注于IT技术分享，记录一个程序员的成长之路的IT程序员个人网站，提供技术分享和作品分享的个人原创网站" />
+  <title>余健博客-专注于技术分享、记录一个程序员的成长之路的个人博客网站</title>
+  {{/if}}
+  <link rel="shortcut icon" href="/img/icon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/font/iconfont.css" />
+  <script type="text/javascript" src="/js/jquery.min_v1.0.js"></script>
+  <script type="text/javascript" src="/libs/markdown/Parser.js"></script>
+  <script type="text/javascript" src="/js/common.js"></script>
+  <script type="text/javascript" src="/js/ltie9.js"></script>
+</head>
+<body>
+<!-- 头部开始 -->
+<header>
+  <div class="header-box">
+    <a class="logo" href="/posts">
+      <img src="/img/logo.png" alt="余健博客" />
+    </a>
+		<span class="warning">
+			<img src="/img/pic-02.png" alt="余健博客" />
+		</span>
+  </div>
+</header>
+<!-- end -->
+{{ include 'components/nav'}}
+<!--{{ include 'components/nav-setting'}}-->
+{{ include 'components/notification'}}

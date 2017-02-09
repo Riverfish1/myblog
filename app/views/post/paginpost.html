@@ -1,0 +1,11 @@
+{{if !posts.pages.isFirstPage}}
+<li><a href='/posts/{{posts.pages.category}}/page/1'>首页</a></li>
+<li><a href='/posts/{{posts.pages.category}}/page/{{posts.pages.currentPage-1}}'>上一页</a></li>
+{{/if}}
+{{each posts.pages.pageArr as page i}}
+<li class="{{posts.pages.currentPage == i+1 ? 'active' : ''}}"><a href='/posts/{{posts.pages.category}}/page/{{i+1}}'>{{i+1}}</a></li>
+{{/each}}
+{{if !posts.pages.isLastPage}}
+<li><a href='/posts/{{posts.pages.category}}/page/{{posts.pages.currentPage+1}}'>下一页</a></li>
+<li><a href='/posts/{{posts.pages.category}}/page/{{posts.pages.lastPage}}'>末页</a></li>
+{{/if}}

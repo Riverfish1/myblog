@@ -1,0 +1,40 @@
+{{ include 'header'}}
+<!-- 内容开始 -->
+<section>
+  <!-- 焦点图 -->
+  <div class="banner-box">
+    {{include '/post/banner'}}
+    <div class="art">
+      {{include '/post/recommend'}}
+    </div>
+  </div>
+  <!-- 作品 -->
+  <div class="work">
+    {{include '/post/personal_work'}}
+  </div>
+  <!-- 文章 -->
+  <article>
+    <div class="art-left">
+      {{include '/post/index_newest_post'}}
+    </div>
+    <aside class="right-box">
+      <div class="art">
+        {{include '/post/hotpost'}}
+      </div>
+      <div class="art mt20">
+        {{include '/post/hottag'}}
+        <div class="share mt20">
+          {{include '/post/share'}}
+        </div>
+      </div>
+      <div class="art mt20">
+        {{include '/post/careus'}}
+      </div>
+      <div class="art mt20">
+        {{include '/post/fri_link'}}
+      </div>
+    </aside>
+  </article>
+</section>
+<!-- end -->
+{{ include 'footer'}}

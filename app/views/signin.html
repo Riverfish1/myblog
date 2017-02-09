@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>余健博客 | 登陆</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .login_bg{
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body class="login_bg">
+<div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+        {{ if success}}
+        <div class="ui success message">
+            <p>{{success }}</p>
+        </div>
+        {{/if}}
+
+        {{if error }}
+        <div class="ui error message">
+            <p>{{ error }}</p>
+        </div>
+        {{/if}}
+    </div>
+</div>
+<div class="login">
+    <form method="post" action="/signin">
+        <div class="name">
+            <span class="icon_user icon" aria-hidden="true"></span>
+            <input name="name" type="text"  id="name" placeholder="请输入账号进行登陆">
+        </div>
+        <div class="password">
+            <span class="icon_lock icon" aria-hidden="true"></span>
+            <input name="password" type="password"  placeholder="请输入登陆密码">
+        </div>
+        <div class="submit">
+            <input type="submit" value="登录"/>
+        </div>
+        <div class="operator">
+            <a href="/signup" target="_self" class="register"> 立即注册</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

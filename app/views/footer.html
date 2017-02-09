@@ -1,0 +1,82 @@
+  <footer>
+    Design By 余健 <a href="http://www.miitbeian.gov.cn" target="_self"> 备案中...</a>
+  </footer>
+  <script src="/js/nav.js" type="text/javascript"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4a24e9fb4d76cb5d3b7124de90c58d46";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <script type="text/javascript">
+    function getBrowser(){
+      var ua = navigator.userAgent.toLowerCase();
+      var btypeInfo = (ua.match( /firefox|chrome|safari|opera/g ) || "other")[ 0 ];
+      if( (ua.match( /msie|trident/g ) || [] )[ 0 ] )
+      {
+        btypeInfo = "msie";
+      }
+      var pc = "";
+      var prefix = "";
+      var plat = "";
+      //濡傛灉娌℃湁瑙︽懜浜嬩欢 鍒ゅ畾涓篜C
+      var isTocuh = ("ontouchstart" in window) || (ua.indexOf( "touch" ) !== -1) || (ua.indexOf( "mobile" ) !== -1);
+      if( isTocuh )
+      {
+        if( ua.indexOf( "ipad" ) !== -1 )
+        {
+          pc = "pad";
+        } else if( ua.indexOf( "mobile" ) !== -1 )
+        {
+          pc = "mobile";
+        } else if( ua.indexOf( "android" ) !== -1 )
+        {
+          pc = "androidPad";
+        } else
+        {
+          pc = "pc";
+        }
+      } else
+      {
+        pc = "pc";
+      }
+      switch( btypeInfo )
+      {
+        case "chrome":
+        case "safari":
+        case "mobile":
+          prefix = "webkit";
+          break;
+        case "msie":
+          prefix = "ms";
+          break;
+        case "firefox":
+          prefix = "Moz";
+          break;
+        case "opera":
+          prefix = "O";
+          break;
+        default:
+          prefix = "webkit";
+          break
+      }
+      plat = (ua.indexOf( "android" ) > 0) ? "android" : navigator.platform.toLowerCase();
+      return {
+        version: (ua.match( /[\s\S]+(?:rv|it|ra|ie)[\/: ]([\d.]+)/ ) || [])[ 1 ],     //鐗堟湰
+        plat: plat,                   //绯荤粺
+        type: btypeInfo,              //娴忚鍣?
+        pc: pc,
+        prefix: prefix,                //鍓嶇紑
+        isMobile: (pc == "pc") ? false : true              //鏄惁鏄Щ鍔ㄧ
+      };
+    };
+    var browser = getBrowser();
+    if(browser.isMobile)
+      location.href='/m';
+  </script>
+  </body>
+  </html>

@@ -1,0 +1,9 @@
+<h2 class="art-txt no-line">
+  <em class="iconfont c-f26868">&#xe608;</em>
+  <span>栏目导航</span>
+</h2>
+<ul class="column">
+  {{each posts.sub_categories as sub_category i}}
+  <li><a href="/posts/{{sub_category.parent_category}}/subcategory/{{sub_category.name}}" class="{{sub_category.active == sub_category.name ? 'current' : '' }}">{{sub_category.name}}</a></li>
+  {{/each}}
+</ul>

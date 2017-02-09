@@ -1,0 +1,65 @@
+{{include 'header'}}
+<section>
+    <div class="post-article">
+        <div class="container">
+            <form method="post" action="/posts/{{post.category}}/edit/{{post._id.toString()}}">
+                <div class="title">
+                    <input type="text" name="title" value="{{post.title}}">
+                </div>
+                <div class="article-set">
+                    <label > 分类：</label>
+                    <div class="categories">
+                        <select name="category">
+                            {{if post.category == 'xwzj'}}
+                            <option value="xwzj" selected>学无止境</option>
+                            {{else}}
+                            <option value="xwzj" >学无止境</option>
+                            {{/if}}
+                            {{if post.category == 'qwzt'}}
+                            <option value="qwzt" selected>趣味杂谈</option>
+                            {{else}}
+                            <option value="qwzt" >趣味杂谈</option>
+                            {{/if}}
+                            {{if post.category == 'works'}}
+                            <option value="works" selected>作品</option>
+                            {{else}}
+                            <option value="works" >作品</option>
+                            {{/if}}
+                            <!--<option value="qwzt" >趣味杂谈</option>-->
+                            <!--<option value="works" >作品</option>-->
+                        </select>
+                    </div>
+                    <label > 栏目：</label>
+                    <div class="sub_category">
+                        <input type="text"   name="sub_category" value="{{post.sub_category}}">
+                    </div>
+                    <label style="margin-left: 30px;"> 标签：</label>
+                    <div class="tag">
+                        <input type="text"  name="tag" value="{{post.tag}}">
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="write">
+                        <textarea name="content" rows="20" cols="100" id="write" >{{post.content}}</textarea>
+                        <div id="preview"></div>
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="发表"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    (function ($,HyperDown) {
+        var $write = $('#write');
+        var $preview = $('#preview');
+        var parser = new HyperDown;
+        $write.keyup(function () {
+            var markdownText = $write.val();
+            $preview.html(parser.makeHtml(markdownText))
+        });
+    })(jQuery,HyperDown)
+</script>
+{{ include 'footer'}}
