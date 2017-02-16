@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>余健博客 | 登陆</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/jquery.min_v1.0.js"></script>
     <style>
         .login_bg{
             background-color: #f2f2f2;
@@ -11,22 +13,7 @@
     </style>
 </head>
 <body class="login_bg">
-<div class="ui grid">
-    <div class="four wide column"></div>
-    <div class="eight wide column">
-        {{ if success}}
-        <div class="ui success message">
-            <p>{{success }}</p>
-        </div>
-        {{/if}}
-
-        {{if error }}
-        <div class="ui error message">
-            <p>{{ error }}</p>
-        </div>
-        {{/if}}
-    </div>
-</div>
+{{ include 'components/notification'}}
 <div class="login">
     <form method="post" action="/signin">
         <div class="name">

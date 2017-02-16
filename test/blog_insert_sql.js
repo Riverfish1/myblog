@@ -548,7 +548,7 @@
         "category" : "works",
         "postSummary" : "1.利用nodeexpressartTemplatemongodb搭建博客系统；\r\n\r\n2.主要功能点：\r\n登陆、注册、分享、发表文章、markdown语法及时时预览、赞助、搜索、留言、标签系统、分页...",
         "sub_category" : "nodejs",
-        "img_url" : "works/myblog20170122100634.jpg",
+        "img_url" : "works/myblog20170122100634.png",
         "tag" : "nodejs;express;artTemplate;mongodb",
         "recommend" : false,
         "pv" : 1

@@ -1,16 +1,17 @@
-<div class="ui grid">
-    <div class="four wide column"></div>
-    <div class="eight wide column">
-        {{ if success}}
-        <div class="ui success message">
-            <p>{{success }}</p>
-        </div>
-        {{/if}}
-
-        {{if error }}
-        <div class="ui error message">
-            <p>{{ error }}</p>
-        </div>
-        {{/if}}
-    </div>
+{{ if success}}
+<div id="info-success-id" class="alert alert-success" >
+    <p>{{success }}</p>
 </div>
+<script>
+    $ ('#info-success-id').show ().delay (3000).fadeOut ();
+</script>
+{{/if}}
+
+{{if error }}
+<div id="info-error-id" class="alert alert-danger">
+    <p>{{ error }}</p>
+</div>
+<script>
+    $ ('#info-error-id').show ().delay (3000).fadeOut ();
+</script>
+{{/if}}
