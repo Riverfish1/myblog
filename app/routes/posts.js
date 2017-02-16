@@ -122,7 +122,10 @@ router.get('/:category/:postId', function (req, res, next) {
       ])
       .then(function (result) {
           // all:特定目录下的所有文章
-          var result = resultParse({
+          if(!result[1]){
+              throw new Error('该文章不存在');
+          }
+          var results = resultParse({
               data: result[0],
               post: result[1],
               postId: postId,
@@ -131,7 +134,7 @@ router.get('/:category/:postId', function (req, res, next) {
           })
           res.render('post', {
               activeNav: category,
-              posts: result
+              posts: results
           });
       })
       .catch(next);

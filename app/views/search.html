@@ -7,10 +7,12 @@
       <h2 class="art-txt list-tit">
         <span>搜索结果</span>
       </h2>
-      {{include '/post/detail_post'}}
+      {{include '/post/detail_search'}}
+      {{if posts && posts.length > 0}}
       <ul class="page">
-        <li><span class='pageinfo'>共<strong>1</strong>页/<strong>1</strong>条记录</span></li>
+        <li><span class='pageinfo'>共<strong>{{posts.length}}</strong>条记录</span></li>
       </ul>
+      {{/if}}
     </div>
     <aside class="right-box">
       {{include '/post/searchpost'}}
