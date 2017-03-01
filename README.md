@@ -99,4 +99,4 @@
 
 支付宝 | 微信
 ------|------
-![](./public/alipay.png) | ![](./public/wechat.jpeg)
+![](./public/alipay.png) | ![](./public/wechat.jpg)
