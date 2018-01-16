@@ -102,6 +102,6 @@ if (module.parent) {
   // 监听端口，启动程序
   const port = process.env.PORT || config.port;
   app.listen(port, function () {
-    console.log('${pkg.name} listening on port ${port}');
+    console.log(`${pkg.name} listening on port ${port}`);
   });
 }
