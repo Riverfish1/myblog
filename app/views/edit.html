@@ -60,6 +60,7 @@
             var markdownText = $write.val();
             $preview.html(parser.makeHtml(markdownText))
         });
+        $write.trigger('keyup');
     })(jQuery,HyperDown)
 </script>
 {{ include 'footer'}}
