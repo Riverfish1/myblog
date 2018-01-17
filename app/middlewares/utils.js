@@ -110,6 +110,16 @@ module.exports = {
                 lastPage: countPage,
                 records: records
             }
+        }else{
+            return {
+                isFirstPage: true,
+                isLastPage: true,
+                pageArr: [],
+                category: options.category,
+                currentPage: 1,
+                lastPage: 1,
+                records: []
+            }
         }
     }
 };
